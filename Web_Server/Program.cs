@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -7,6 +8,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Web_Server
 {
@@ -84,6 +86,7 @@ namespace Web_Server
             if (requestedPath == "/") requestedPath = "index.html";
             if (requestedPath == "/generic") requestedPath = "generic.html";
             if (requestedPath == "/elements") requestedPath = "elements.html";
+
             string filePath = Path.Join(WebServerPath, requestedPath);
 
             if (!File.Exists(filePath)) return null;
